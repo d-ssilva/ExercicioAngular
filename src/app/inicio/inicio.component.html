@@ -1,74 +1,118 @@
-<footer class="page-footer font-small fundo pt-4">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-lg-12 -col-sm-12 d-flex justify-content-center">
-                <h6 class="cortext font-weight-light "></h6>
+<div class="container-fluid">
+    <div class="row bg-secondary d-flex align-items-center">
+        <div class="col-md-6">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-6 text-white">
+                    <h1 class="fs-54">Seja Bem vindo!</h1>
+                    <h5>Expresse seus pensamentos!</h5>
+                </div>
+            </div>
+
+            <div class="row d-flex justify-content-center mt-3 mb-5">
+                <div class="col-md-6">
+
+                    <!-- BOTÃO DE NOVA POSTAGEM -->
+                    <button class="btn btn-light mr-2" data-toggle="modal" data-target="#novaPostagem">
+                        Nova Postagem
+                    </button>
+                    <!-- /BOTÃO DE CLIQUE -->
+
+                    <a class="btn btn-outline-light" href="#postagens">Ver Postagens</a> <!-- BOTÃO DE CLIQUE -->
+                </div>
             </div>
         </div>
+        <div class="col-md-6 d-flex justify-content-center">
+            <img src="../../assets/advuaho - Imgur.png" alt="" width="500px" height="500px">
+        </div>
+    </div>
+</div>
 
-        <div class="row d-flex justify-content-center">
-            <div class="col-lg-2 d-flex justify-content-center align-items-center ">
-                <!--LOGO-RODAPE-->
-                <ul class="logo-rodape">
-                    <li>
-                        <a href="">
-                            <i class="fa" aria-hidden="true"><img src="../../assets/img/LOGOB.png" alt=""></i>
-                        </a>
-                    </li>
-                </ul>
+<!-- NAV-BAR -->
+<div class="container mb-5 mt-5" id=postagens>
+    <ul class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
+
+        <li class="nav-item">
+
+            <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-todasPostagens"
+                data-toggle="tab" role="tab" aria-current="nav-todasPostagens" aria-selected="true"
+                href="#todasPostagens">
+                Todas postagens</a>
+
+        </li>
+
+        <li class="nav-item">
+
+            <a class="nav-link text-secondary font-weight-bold" id="nav-minhasPostagens" data-toggle="tab"
+                href="#minhasPostagens" role="tab" aria-controls="nav-minhasPostagens" aria-selected="false">
+                Minhas postagens</a>
+
+        </li>
+
+        <li class="nav-item">
+
+            <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-postagemPorTema-tab" data-toggle="tab"
+                role="tab" aria-controls="nav-postagemPorTema" aria-selected="false" href="#nav-postagemPorTema">
+                Postagens por Tema</a>
+
+        </li>
+    </ul>
+</div>
+<!-- /NAV-BAR -->
+
+
+<!-- CONTEÚDO DA NAV-BAR -->
+<div class="tab-content" id="nav-tabContent">
+
+    <div class="tab-pane fade show active" id="nav-todasPostagens" role="tabpanel"
+        aria-labelledby="nav-todasPostagens-tab">
+        Todas as Postagens
+    </div>
+
+    <div class="tab-pane fade" id="nav-minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">
+        Minhas Postagens
+    </div>
+
+    <div class="tab-pane fade" id="nav-postagemPorTema" role="tabpanel" aria-labelledby="nav-postagemPorTema-tab">
+        Postagens por Tema
+    </div>
+
+</div>
+<!-- /CONTEÚDO DA NAV-BAR -->
+
+
+
+<!-- MODAL -->
+<div class="modal fade" id="novaPostagem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Nova Postagem</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            <div class="modal-body">
 
-            <div class="col-lg-2 d-flex justify-content-center align-items-center">
-                <ul class="texto-rodape">
-                    <li>MENU</li>
-                    <li> <a href="#">Contato</a></li>
-                    <li> <a href="#">Contato</a></li>
-                    <li> <a href="#">Contato</a></li>
-                    <li> <a href="#">Contato</a></li>
-                </ul>
+                <div class="form-group">
+                    <label for="titulo">Titulo</label>
+                    <input type="text" class="form-control" id="titulo" placeholder="Digite o título">
+                </div>
+
+                <div class="form-group">
+                    <label for="texto">Texto</label>
+                    <textarea class="form-control" name="texto" id="texto" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="texto">Escolha um tema ou <a href="">cadastre um novo</a>:</label>
+                    <select class="form-control" name="tema" id="tema"><option value="">Temas</option>
+                    </select>
+                </div>
+
             </div>
-
-            <div class="col-lg-2 d-flex justify-content-center align-items-center">
-                <ul class="texto-rodape">
-                    <li>MENU</li>
-                    <li> <a href="#">Contato</a></li>
-                    <li> <a href="#">Contato</a></li>
-                    <li> <a href="#">Contato</a></li>
-                    <li> <a href="#">Contato</a></li>
-                </ul>
-            </div>
-
-            <div class="col-lg-2 d-flex justify-content-center align-items-center">
-                <ul class="texto-rodape">
-                    <li>MENU</li>
-                    <li> <a href="#">Contato</a></li>
-                    <li> <a href="#">Contato</a></li>
-                    <li> <a href="#">Contato</a></li>
-                    <li> <a href="#">Contato</a></li>
-                </ul>
-            </div>
-
-            <div class="col-lg-4 d-flex align-items-center justify-content-center">
-                <ul class="social-midias">
-                    <!--LOGO/LINK/MIDIA-SOCIAL - RODAPE-->
-                    <li>
-                        <a href="#" target="_black">
-                            <i class="fa fa-facebook" aria-hidden="true"></i></a>
-                    </li>
-                    <li>
-                        <a href="#" target="_black">
-                            <i class="fa fa-instagram" aria-hidden="true"></i></a>
-                    </li>
-                    <li>
-                        <a href="#" target="_black">
-                            <i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                    </li>
-                    </ul>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success">Publicar</button>
             </div>
         </div>
     </div>
-
-    <div class="footer-copyright text-center py-3 fundo">
-        <span class="text-light cortext font-weight-light"> &copy; 2021 Copytight - Lotus</span>
-    </div>
-</footer>
+</div>
+<!-- /MODAL -->

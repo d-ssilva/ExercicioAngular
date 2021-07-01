@@ -11,11 +11,11 @@
             <ul class="navbar-nav ms-auto d-flex align-items-center">
                 <li class="nav-item active m-1">
                     <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->
-                    <img src="Eu"
+                    <img src="{{foto}}"
                         alt="eu" width="50px" height="50px" class="img-fluid rounded-circle ml">
                 </li>
                 <li class="nav-item">
-                    <p class="m-1 font-weight-bold fs-16 text-white">Danilo Silva |</p>
+                    <p class="m-1 font-weight-bold fs-16 text-white">Olá, {{nome}} |</p>
                 </li>
                 <!-- icone de edição -->
                 <li class="nav-item pl-2">
@@ -30,7 +30,7 @@
             <!-- Icone para sair -->
             <ul class="navbar-nav ml-auto d-flex align-items-center">
                 <li class="nav-item pl-3">
-                    <a class="m-0 font-weight-bold text-white fs-16 fst-italic">Sair<i class="ml-2 fa fa-sign-out"aria-hidden="true"></i>
+                    <a (click)='sair'class="m-0 font-weight-bold text-white fs-16 fst-italic">Sair<i class="ml-2 fa fa-sign-out"aria-hidden="true"></i>
                     </a>
                 </li>
             </ul>

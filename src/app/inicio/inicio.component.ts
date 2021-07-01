@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-inicio',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
-  constructor() { }
+  constructor(
 
-  ngOnInit(): void {
+    private router: Router
+    
+  ) { }
+    
+  ngOnInit() {
+
+
+    // SEMPRE que entrar na pagina inicio, verifica se o token esta vazio
+    if (environment.token == ''){      
+      this.router.navigate(['/entrar'])
+    }
   }
-
 }
