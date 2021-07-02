@@ -33,8 +33,12 @@
 
         <li class="nav-item">
 
-            <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-todasPostagens"
-                data-toggle="tab" role="tab" aria-current="nav-todasPostagens" aria-selected="true"
+            <a class="nav-item nav-link active text-secondary font-weight-bold" 
+                id="nav-todasPostagens"
+                data-toggle="tab" 
+                role="tab" 
+                aria-current="nav-todasPostagens" 
+                aria-selected="true"
                 href="#todasPostagens">
                 Todas postagens</a>
 
@@ -42,16 +46,25 @@
 
         <li class="nav-item">
 
-            <a class="nav-link text-secondary font-weight-bold" id="nav-minhasPostagens" data-toggle="tab"
-                href="#minhasPostagens" role="tab" aria-controls="nav-minhasPostagens" aria-selected="false">
+            <a class="nav-link text-secondary font-weight-bold" id="nav-minhasPostagens"
+                data-toggle="tab"
+                href="#minhasPostagens" 
+                role="tab" 
+                aria-controls="nav-minhasPostagens" 
+                aria-selected="false">
                 Minhas postagens</a>
 
         </li>
 
         <li class="nav-item">
 
-            <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-postagemPorTema-tab" data-toggle="tab"
-                role="tab" aria-controls="nav-postagemPorTema" aria-selected="false" href="#nav-postagemPorTema">
+            <a class="nav-item nav-link text-secondary font-weight-bold" 
+                id="nav-postagemPorTema-tab" 
+                data-toggle="tab"
+                role="tab" 
+                aria-controls="nav-postagemPorTema" 
+                aria-selected="false" 
+                href="#nav-postagemPorTema">
                 Postagens por Tema</a>
 
         </li>
@@ -62,20 +75,26 @@
 
 <!-- CONTEÚDO DA NAV-BAR -->
 <div class="tab-content" id="nav-tabContent">
-
-    <div class="tab-pane fade show active" id="nav-todasPostagens" role="tabpanel"
+    <div class="tab-pane fade show active"
+        id="nav-todasPostagens"
+        role="tabpanel"
         aria-labelledby="nav-todasPostagens-tab">
         Todas as Postagens
     </div>
 
-    <div class="tab-pane fade" id="nav-minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">
+    <div class="tab-pane fade" 
+        id="nav-minhasPostagens" 
+        role="tabpanel" 
+        aria-labelledby="nav-minhasPostagens-tab">
         Minhas Postagens
     </div>
 
-    <div class="tab-pane fade" id="nav-postagemPorTema" role="tabpanel" aria-labelledby="nav-postagemPorTema-tab">
+    <div class="tab-pane fade" 
+        id="nav-postagemPorTema" 
+        role="tabpanel" 
+        aria-labelledby="nav-postagemPorTema-tab">
         Postagens por Tema
     </div>
-
 </div>
 <!-- /CONTEÚDO DA NAV-BAR -->
 
@@ -102,14 +121,14 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="texto">Escolha um tema ou <a href="">cadastre um novo</a>:</label>
+                    <label for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink='/tema'>cadastre um novo</a>:</label>
                     <select class="form-control" name="tema" id="tema"><option value="">Temas</option>
                     </select>
                 </div>
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                 <button type="button" class="btn btn-success">Publicar</button>
             </div>
         </div>
