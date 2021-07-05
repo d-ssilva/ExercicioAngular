@@ -1,7 +1,12 @@
-.fs-16{
+.BG {
+    background: rgb(4, 13, 92);
+    background: linear-gradient(0deg, rgba(4, 13, 92, 0.6923144257703081) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+.fs-16 {
     font-size: 16pt;
 }
 
-.a{
+.a {
     cursor: pointer;
 }
