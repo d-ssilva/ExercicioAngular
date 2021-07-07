@@ -10,15 +10,9 @@ import { Tema } from '../model/Tema';
 })
 export class TemaService {
 
-  constructor(
+  constructor( private http: HttpClient ) { }
 
-    private http: HttpClient
-
-  ) { }
-
-    token = {
-      headers: new HttpHeaders().set('Authorization', environment.token)
-    }
+    token = {  headers: new HttpHeaders().set('Authorization', environment.token) }
 
     getAllTema(): Observable<Tema[]>{
       return this.http.get<Tema[]>('https://backendthiagofaccipieri.herokuapp.com/tema', this.token)      

@@ -1,6 +1,6 @@
-.BG {
-    background: rgb(4, 13, 92);
-    background: linear-gradient(0deg, rgba(4, 13, 92, 0.6923144257703081) 0%, rgba(0, 0, 0, 1) 100%);
+border-bottom {
+    background: rgb(142, 141, 141);
+    background: radial-gradient(circle, rgba(142, 141, 141, 1) 0%, rgba(255, 255, 255, 1) 100%);
 }
 
 .fs-16 {
