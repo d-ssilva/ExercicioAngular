@@ -15,22 +15,22 @@ export class TemaService {
     token = {  headers: new HttpHeaders().set('Authorization', environment.token) }
 
     getAllTema(): Observable<Tema[]>{
-      return this.http.get<Tema[]>('https://backendthiagofaccipieri.herokuapp.com/tema', this.token)      
+      return this.http.get<Tema[]>('https://blog-pessoal-danilo-silva.herokuapp.com/tema', this.token)      
     }
 
     getByIdTema(id:number):Observable<Tema>{
-      return this.http.get<Tema>(`https://backendthiagofaccipieri.herokuapp.com/tema/${id}`, this.token)
+      return this.http.get<Tema>(`https://blog-pessoal-danilo-silva.herokuapp.com/tema/${id}`, this.token)
     }
 
     postTema(tema: Tema): Observable<Tema>{
-      return this.http.post<Tema>('https://backendthiagofaccipieri.herokuapp.com/tema', tema, this.token)
+      return this.http.post<Tema>('https://blog-pessoal-danilo-silva.herokuapp.com/tema', tema, this.token)
     }
 
     putTema(tema: Tema): Observable<Tema>{
-      return this.http.put<Tema>('https://backendthiagofaccipieri.herokuapp.com/tema', tema, this.token)
+      return this.http.put<Tema>('https://blog-pessoal-danilo-silva.herokuapp.com/tema', tema, this.token)
     }
 
     deleteTema(id: number){
-      return this.http.delete(`https://backendthiagofaccipieri.herokuapp.com/tema/${id}`, this.token)
+      return this.http.delete(`https://blog-pessoal-danilo-silva.herokuapp.com/tema/${id}`, this.token)
     }
 }
