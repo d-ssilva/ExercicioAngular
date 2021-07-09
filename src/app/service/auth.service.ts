@@ -21,9 +21,9 @@ export class AuthService {
     return this.http.post<User>('https://blog-pessoal-danilo-silva.herokuapp.com/usuarios/cadastrar', user)
   }
 
-
+  // NUNCA USAR ASPAS SIMPLES QUANDO REFERENCIAR ID'S EM ENDPOINTS
   getByIdUser(id: number): Observable<User> {
-    return this.http.get<User>('https://blog-pessoal-danilo-silva.herokuapp.com/usuarios/${id}')
+    return this.http.get<User>(`https://blog-pessoal-danilo-silva.herokuapp.com/usuarios/${id}`)
   }
 
   logado() {

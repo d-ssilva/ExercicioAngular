@@ -43,6 +43,8 @@ export class InicioComponent implements OnInit {
     if (environment.token == '') {
       this.router.navigate(['/entrar'])
     }
+
+    this.findByIdUser()
     this.getAllTemas()
     this.getAllPostagens()
   }
@@ -50,12 +52,6 @@ export class InicioComponent implements OnInit {
   getAllTemas() {
     this.temaService.getAllTema().subscribe((resp: Tema[]) => {
       this.listaTemas = resp
-    })
-  }
-
-  findByIdTema() {
-    this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema) => {
-      this.tema = resp
     })
   }
 
@@ -69,6 +65,12 @@ export class InicioComponent implements OnInit {
   findByIdUser() {
     this.authService.getByIdUser(this.idUser).subscribe((resp: User) => {
       this.user = resp
+    })
+  }
+
+  findByIdTema() {
+    this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema) => {
+      this.tema = resp
     })
   }
 
