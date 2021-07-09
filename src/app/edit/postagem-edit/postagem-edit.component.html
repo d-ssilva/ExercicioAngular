@@ -1,0 +1,47 @@
+<div class="contaier">
+    <div class="row">
+
+        <!-- MODAL PARA NOVA POSTAGEM -->
+        <div class="modal fade" id="novaPostagem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Nova Postagem</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="form-group">
+                            <label for="titulo">Titulo</label>
+                            <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo"
+                                placeholder="Digite o título">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="texto">Texto</label>
+                            <textarea [(ngModel)]='postagem.texto' class="form-control" name="texto" id="texto"
+                                rows="3"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink='/tema'>cadastre um
+                                    novo</a>:</label>
+                            <select class="form-control" name="tema" id="tema" [(ngModel)]='idTema'
+                                >
+                                <option *ngFor='let i of listaTemas' value="{{i.id}}">
+                                    {{i.descricao}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger mr-4" routerLink='/inicio'>Cancelar</button>
+                        <button type="button" class="btn btn-success" (click)='atualizar()'
+                            data-dismiss="modal">Atualizar</button>
+                    </div>
+                </div>
+                <!--/FECHAMENTO DO modal-content-->
+            </div><!-- /FECHAMENTO DO modal-dialog-->
+        </div><!-- /MODAL -->
+    </div>
+</div>
