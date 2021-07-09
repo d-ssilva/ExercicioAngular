@@ -45,4 +45,9 @@ export class TemaEditComponent implements OnInit {
 
     })
   }
+
+  cancelar(){
+    this.router.navigate(['/tema'])
+  }
+
 }

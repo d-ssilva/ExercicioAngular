@@ -1,17 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 
-html{
-    scroll-behavior: smooth; /*habilitar o scroll devagar*/
+html {
+    scroll-behavior: smooth;
+    /*habilitar o scroll devagar*/
 }
 
-.fs-54{
+.fs-54 {
     font-size: 54pt;
 }
 
-.fs-18{
+.fs-18 {
     font-size: 18pt;
 }
 
-h{
+h {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.fundo {
+    background: rgb(128, 128, 128);
+    background: linear-gradient(32deg, rgba(128, 128, 128, 1) 0%, rgba(67, 67, 67, 1) 100%);
 }

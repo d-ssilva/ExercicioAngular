@@ -1,10 +1,10 @@
 <div class="container-fluid">
-    <div class="row bg-secondary d-flex align-items-center">
+    <div class="row fundo d-flex align-items-center">
         <div class="col-md-6">
             <div class="row d-flex justify-content-center">
                 <div class="col-md-12 text-white text-center">
-                    <h2 class="fs-54">Olá, bem vindo!</h2>
-                    <h5>Expresse seus pensamentos!</h5>
+                    <h2 class="fs-54">Olá, bem vindo</h2>
+                    <h5>Este é o seu novo diário digital!</h5>
                 </div>
             </div>
 
@@ -18,7 +18,8 @@
                     <!-- /BOTÃO DE NOVA POSTAGEM -->
 
                     <!-- BOTÃO DE CLIQUE -->
-                    <a class="btn btn-outline-light" href="#postagens">Ver Postagens</a> <!-- /BOTÃO DE CLIQUE -->
+                    <a class="btn btn-outline-light" href="#postagens">Ver Postagens</a>
+                    <!-- /BOTÃO DE CLIQUE -->
                 </div>
             </div>
         </div>
@@ -60,9 +61,7 @@
 
 
 <!-- CARD DE POSTAGENS -->
-<div class="tab-content mt-5" id="nav-tabContent">
-
-    <hr class="my-3">
+<div class="tab-content mED border my-5" id="nav-tabContent">   
 
     <!-- TODAS AS POSTAGENS -->
     <div class="tab-pane fade show active align-content-center justify-content-center text-center my-3"
@@ -71,13 +70,15 @@
         <div class="card-columns">
             <div class="card text-center" *ngFor='let postagem of listaPostagens'>
                 <div class="card-body">
-                    <h5 class="card-title">{{postagem.titulo}}</h5>
-                    <!-- <small class="text-muted">Tema: {{postagem.tema.descricao}}</small> -->
-                    <p class="card-text">{{postagem.texto}}</p>
-                    <p class="card-text"><small class="text-muted">{{postagem.data | date: 'dd/MM/yyyy'}} às
-                            {{postagem.data | date: 'HH:mm'}}</small></p>
-
-                    <!-- <p class="card-text"><small class="text-muted">por: {{postagem.usuario.nome}}</small></p> !!ARRUMAR NOME !!-->
+                    <h5 class="card-title">{{ postagem.titulo }}</h5>
+                    <small class="text-muted">Tema: {{ postagem.tema.descricao }}</small>
+                    <p class="card-text">{{ postagem.texto }}</p>
+                    <p class="card-text">
+                        <small class="text-muted">
+                            {{ postagem.data | date: "dd/MM/yyyy" }} às {{ postagem.data | date: "HH:mm" }}
+                        </small>
+                    </p>
+                    <p class="card-text"><small class="text-muted">por: {{postagem.usuario.nome}}</small></p>
                 </div>
             </div>
 
@@ -92,10 +93,10 @@
             <div class="card-columns">
                 <div class="card text-center" *ngFor='let postagem of user.postagem'>
                     <div class="card-body">
-                        <h5 class="card-title">{{postagem.titulo}}</h5>
-                        <!-- <small class="text-muted">Tema: {{postagem.tema.descricao}}</small> -->
-                        <p class="card-text">{{postagem.texto}}</p>
-                        <p class="card-text"><small class="text-muted">{{postagem.data | date: 'dd/MM/yyyy'}} às {{postagem.data | date: 'HH:mm'}}</small></p>
+                        <h5 class="card-title">{{ postagem.titulo }}</h5>
+                        <small class="text-muted">Tema: {{ postagem.tema.descricao }}</small>
+                        <p class="card-text">{{ postagem.texto }}</p>
+                        <p class="card-text"><small class="text-muted">{{ postagem.data | date: "dd/MM/yyyy" }} às {{ postagem.data | date: "HH:mm" }}</small></p>
                     </div>
                 </div>
             </div>
@@ -109,8 +110,10 @@
                         <div class="card-body">
                             <h5 class="card-title">{{postagem.titulo}}</h5>
                             <p class="card-text">{{postagem.texto}}</p>
-                            <p class="card-text"><small class="text-muted">{{postagem.data | date: 'dd/MM/yyyy'}} às {{postagem.data | date: 'HH:mm'}}</small></p>
-                            <!-- <p class="card-text"><small class="text-muted">por: {{postagem.usuario.nome}}</small></p> !!ARRUMAR NOME !!-->
+
+                            <p class="card-text"><small class="text-muted">{{postagem.data | date: "dd/MM/yyyy"}} às {{postagem.data | date: "HH:mm"}}</small></p>
+
+                            <p class="card-text"><small class="text-muted">por: {{postagem.usuario.nome}}</small></p>
                         </div>
                     </div>
                 </div>

@@ -9,4 +9,15 @@ border-bottom {
 
 .a {
     cursor: pointer;
+    
 }
+.a:hover {
+    color: rgb(128, 128, 128);
+    background: linear-gradient(32deg, rgba(128, 128, 128, 1) 0%, rgba(67, 67, 67, 1) 100%);
+}
+
+.fa.fa-pencil-square-o:hover{    
+    color: greenyellow!important;
+}
+
+

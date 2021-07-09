@@ -85,7 +85,7 @@ export class InicioComponent implements OnInit {
       this.postagem = resp
       alert('Postagem realizada com sucesso')
       this.postagem = new Postagem() // Para limpar os campos do modal
-      this.getAllPostagens
+      this.getAllPostagens()
     })
   }
 }
