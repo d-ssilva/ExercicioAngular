@@ -37,6 +37,7 @@ export class InicioComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    window.scroll(0,0)
     // this.postagemService.refreshToken()
     // SEMPRE que entrar na pagina inicio, verifica se o token esta vazio
     if (environment.token == '') {

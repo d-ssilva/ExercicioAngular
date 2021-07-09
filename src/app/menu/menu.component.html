@@ -17,15 +17,14 @@
                 <li class="nav-item">
                     <p class="m-1 font-weight-bold fs-16 text-white">Olá, {{nome}} |</p>
                 </li>
+
                 <!-- icone de edição -->
                 <li class="nav-item pl-2">
-
-                    <a href="">
+                    <a [routerLink]="['/user-edit',id]">
                         <p class="text-white fs-16 m-1">
                             <i class="fa fa-pencil-square-o text-white fs-16" aria-hidden="true"></i>
                         </p>
                     </a>
-
                 </li>
                 <!-- /icone de edição -->
             </ul>

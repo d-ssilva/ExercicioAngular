@@ -18,11 +18,18 @@ export class MenuComponent implements OnInit {
   // Token Inserido no cadastrado
   token = environment.token
 
+  id = environment.id
+
   constructor(
     private router: Router
   ) { }
 
   ngOnInit() {
+
+    if (environment.token == '') {
+      this.router.navigate(['/entrar'])
+    }
+
   }
 
   sair(){
