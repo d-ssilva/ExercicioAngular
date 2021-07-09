@@ -54,7 +54,7 @@ export class PostagemEditComponent implements OnInit {
     })
   }
 
-  findAllTemas() {
+  findAllTemas(){
     this.temaService.getAllTema().subscribe((resp: Tema[]) => {
       this.listaTemas = resp
     })
