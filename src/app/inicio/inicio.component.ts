@@ -25,7 +25,6 @@ export class InicioComponent implements OnInit {
   listaTemas: Tema[]
   idTema: number
 
-
   user: User = new User()
   idUser = environment.id
 
@@ -38,18 +37,14 @@ export class InicioComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
     // this.postagemService.refreshToken()
-
     // SEMPRE que entrar na pagina inicio, verifica se o token esta vazio
     if (environment.token == '') {
       this.router.navigate(['/entrar'])
     }
     this.getAllTemas()
     this.getAllPostagens()
-
   }
-
 
   getAllTemas() {
     this.temaService.getAllTema().subscribe((resp: Tema[]) => {
@@ -77,13 +72,10 @@ export class InicioComponent implements OnInit {
   }
 
   publicar() {
-
     this.tema.id = this.idTema
     this.postagem.tema = this.tema
-
     this.user.id = this.idUser
-    this.postagem.usuario = this.user
-
+    this.postagem.usuario = this.user // relacionando a tabela de usuario relacionando com seu id
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
       alert('Postagem realizada com sucesso')
@@ -91,4 +83,5 @@ export class InicioComponent implements OnInit {
       this.getAllPostagens()
     })
   }
+
 }
