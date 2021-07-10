@@ -69,6 +69,7 @@
             <div class="card text-center" *ngFor='let p of listaPostagens'>
                 <div class="card-body">
                     <h5 class="card-title">Título: {{ p.titulo | uppercase }}</h5>
+                    <small class="text-muted">Tema: {{ p.tema.descricao }}</small>
                     <p class="card-text">Texto: {{ p.texto }}</p>
                     <p class="card-text"><small class="text-muted">{{p.data | date: 'dd/MM/yy'}} às {{p.data | date:
                             'HH:mm'}}</small></p>
