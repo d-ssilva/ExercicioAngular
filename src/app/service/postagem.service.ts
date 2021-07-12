@@ -27,6 +27,11 @@ export class PostagemService {
     return this.http.get<Postagem>(`https://blog-pessoal-danilo-silva.herokuapp.com/postagem/${id}`, this.token)
   }
 
+  // FUNÇÃO PARA CONSULTAR UMA POSTAGEM POR TITULO
+  getByTituloPostagem(titulo : string): Observable<Postagem[]> {
+    return this.http.get<Postagem[]>(`https://blog-pessoal-danilo-silva.herokuapp.com/postagem/titulo/${titulo}`, this.token)
+  }
+
   postPostagem(postagem: Postagem): Observable<Postagem> {
     return this.http.post<Postagem>('https://blog-pessoal-danilo-silva.herokuapp.com/postagem', postagem, this.token)
   }
@@ -35,8 +40,8 @@ export class PostagemService {
     return this.http.put<Postagem>('https://blog-pessoal-danilo-silva.herokuapp.com/postagem', postagem, this.token)
   }
 
-  deletePostagem(id: number){
-    return this.http.delete(`https://blog-pessoal-danilo-silva.herokuapp.com/postagem/${id}`, 
-    this.token)
+  deletePostagem(id: number) {
+    return this.http.delete(`https://blog-pessoal-danilo-silva.herokuapp.com/postagem/${id}`,
+      this.token)
   }
 }

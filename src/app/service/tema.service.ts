@@ -10,27 +10,31 @@ import { Tema } from '../model/Tema';
 })
 export class TemaService {
 
-  constructor( private http: HttpClient ) { }
+  constructor(private http: HttpClient) { }
 
-    token = {  headers: new HttpHeaders().set('Authorization', environment.token) }
+  token = { headers: new HttpHeaders().set('Authorization', environment.token) }
 
-    getAllTema(): Observable<Tema[]>{
-      return this.http.get<Tema[]>('https://blog-pessoal-danilo-silva.herokuapp.com/tema', this.token)      
-    }
+  getAllTema(): Observable<Tema[]> {
+    return this.http.get<Tema[]>('https://blog-pessoal-danilo-silva.herokuapp.com/tema', this.token)
+  }
 
-    getByIdTema(id:number):Observable<Tema>{
-      return this.http.get<Tema>(`https://blog-pessoal-danilo-silva.herokuapp.com/tema/${id}`, this.token)
-    }
+  getByIdTema(id: number): Observable<Tema> {
+    return this.http.get<Tema>(`https://blog-pessoal-danilo-silva.herokuapp.com/tema/${id}`, this.token)
+  }
+  // FUNÇÃO PARA PESQUISAR TEMA PELO NOME
+  getByNomeTema(nome: string): Observable<Tema[]> {
+    return this.http.get<Tema[]>(`https://blog-pessoal-danilo-silva.herokuapp.com/tema/nome/${nome}`, this.token)
+  }
 
-    postTema(tema: Tema): Observable<Tema>{
-      return this.http.post<Tema>('https://blog-pessoal-danilo-silva.herokuapp.com/tema', tema, this.token)
-    }
+  postTema(tema: Tema): Observable<Tema> {
+    return this.http.post<Tema>('https://blog-pessoal-danilo-silva.herokuapp.com/tema', tema, this.token)
+  }
 
-    putTema(tema: Tema): Observable<Tema>{
-      return this.http.put<Tema>('https://blog-pessoal-danilo-silva.herokuapp.com/tema', tema, this.token)
-    }
+  putTema(tema: Tema): Observable<Tema> {
+    return this.http.put<Tema>('https://blog-pessoal-danilo-silva.herokuapp.com/tema', tema, this.token)
+  }
 
-    deleteTema(id: number){
-      return this.http.delete(`https://blog-pessoal-danilo-silva.herokuapp.com/tema/${id}`, this.token)
-    }
+  deleteTema(id: number) {
+    return this.http.delete(`https://blog-pessoal-danilo-silva.herokuapp.com/tema/${id}`, this.token)
+  }
 }

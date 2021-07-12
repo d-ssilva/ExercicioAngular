@@ -32,6 +32,10 @@ export class InicioComponent implements OnInit {
   key = 'data'
   reverse = true
 
+  // ESSA VARIÁVEL RECEBE A PALAVRA DE PESQUISA DO USER
+  tituloPost: string
+  nomeTema: string
+
   constructor(
     private alert: AlertasService,
     private router: Router,
@@ -41,7 +45,7 @@ export class InicioComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    window.scroll(0,0)
+    window.scroll(0, 0)
     // this.postagemService.refreshToken()
     // SEMPRE que entrar na pagina inicio, verifica se o token esta vazio
     if (environment.token == '') {
@@ -91,4 +95,25 @@ export class InicioComponent implements OnInit {
     })
   }
 
+  findByTituloPostagem() {
+
+    if (this.tituloPost == '') {
+      this.getAllPostagens()
+    } else {
+      this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[]) => {
+        this.listaPostagens = resp
+      })
+    }
+  }
+
+  findByNomeTema() {
+
+    if (this.nomeTema == '') {
+      this.getAllTemas()
+    } else {
+      this.temaService.getByNomeTema(this.nomeTema).subscribe((resp: Tema[]) => {
+        this.listaTemas = resp
+      })
+    }
+  }
 }
