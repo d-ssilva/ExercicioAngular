@@ -104,6 +104,7 @@
             <div class="card text-center" *ngFor='let postagem of tema.postagem'>
                 <div class="card-body">
                     <h5 class="card-title">Titulo: {{postagem.titulo}}</h5>
+                    <small class="text-primary">Tema: {{ tema.descricao }}</small>
                     <p class="card-text">Texto: {{postagem.texto}}</p>
                     <p class="card-text"><small class="text-muted">{{postagem.data | date: "dd/MM/yyyy"}} às
                             {{postagem.data | date: "HH:mm"}}</small></p>
