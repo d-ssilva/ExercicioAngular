@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/model/User';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { AuthService } from 'src/app/service/auth.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -18,6 +19,7 @@ export class UserEditComponent implements OnInit {
 
 
   constructor(
+    private alert: AlertasService,
     private authService: AuthService,
     private route: ActivatedRoute,
     private router: Router
@@ -50,7 +52,7 @@ export class UserEditComponent implements OnInit {
       this.authService.cadastrar(this.user).subscribe((resp: User) => {
         this.user = resp
         this.router.navigate(["/entrar"])
-        alert('Cadastro atualizado com sucesso! Faça login novamente.')
+        this.alert.showAlertInfo('Cadastro atualizado com sucesso! Faça login novamente.')
         environment.token = ''
         environment.nome = ''
         environment.foto = ''

@@ -5,6 +5,7 @@ import { Tema } from '../../model/Tema';
 import { PostagemService } from 'src/app/service/postagem.service';
 import { TemaService } from 'src/app/service/tema.service';
 import { environment } from 'src/environments/environment.prod';
+import { AlertasService } from 'src/app/service/alertas.service';
 
 @Component({
   selector: 'app-postagem-delete',
@@ -18,6 +19,7 @@ export class PostagemDeleteComponent implements OnInit {
 
 
   constructor(
+    private alert: AlertasService,
     private router: Router,
     private route: ActivatedRoute,
     private postagemService: PostagemService,
@@ -46,7 +48,7 @@ export class PostagemDeleteComponent implements OnInit {
 
   apagar() {
     this.postagemService.deletePostagem(this.idPost).subscribe(()=>{
-      alert('Postagem apagada com sucesso!')
+      this.alert.showAlertSuccess('Postagem apagada com sucesso!')
       this.router.navigate(['/inicio'])
     })
   }
