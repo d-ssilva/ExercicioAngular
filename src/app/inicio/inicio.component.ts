@@ -41,7 +41,7 @@ export class InicioComponent implements OnInit {
     private router: Router,
     private postagemService: PostagemService,
     private temaService: TemaService,
-    private authService: AuthService
+    public authService: AuthService // estava como private antes, mas editei para que pudesse exportar o método adm() em auth.service este html
   ) { }
 
   ngOnInit() {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Tema } from '../model/Tema';
+import { AlertasService } from '../service/alertas.service';
 import { TemaService } from '../service/tema.service';
 
 @Component({
@@ -16,6 +17,7 @@ export class TemaComponent implements OnInit {
   listaTemas: Tema[]
   
   constructor(
+    private alert: AlertasService,
     private router: Router,
     private temaService: TemaService
   ) { }
@@ -24,6 +26,11 @@ export class TemaComponent implements OnInit {
       // SEMPRE que entrar na pagina inicio, verifica se o token esta vazio
       if (environment.token == ''){      
         this.router.navigate(['/entrar'])
+      }
+
+      if(environment.tipo != 'adm'){
+        this.alert.showAlertDanger('Você precisa ser administrador para ter acesso!')
+        this.router.navigate(['/inicio'])
       }
 
       this.findAllTemas()
