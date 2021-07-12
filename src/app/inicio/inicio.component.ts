@@ -10,6 +10,7 @@ import { TemaService } from '../service/tema.service';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { User } from '../model/User';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-inicio',
@@ -30,6 +31,7 @@ export class InicioComponent implements OnInit {
 
 
   constructor(
+    private alertas: AlertasService,
     private router: Router,
     private postagemService: PostagemService,
     private temaService: TemaService,
@@ -81,7 +83,7 @@ export class InicioComponent implements OnInit {
     this.postagem.usuario = this.user // relacionando a tabela de usuario relacionando com seu id
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
-      alert('Postagem realizada com sucesso')
+      this.alertas.showAlertSuccess('Postagem realizada com sucesso')
       this.postagem = new Postagem() // Para limpar os campos do modal
       this.getAllPostagens()
     })
