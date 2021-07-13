@@ -43,7 +43,7 @@ import { OrderModule } from 'ngx-order-pipe'; // para funcionamento do order-by 
     HttpClientModule,
     FormsModule,
     ModalModule.forRoot(),
-    OrderModule
+    OrderModule  // para funcionamento do order-by de postagens :-)
 
   ],
   providers: [{

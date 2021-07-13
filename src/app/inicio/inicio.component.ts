@@ -29,6 +29,7 @@ export class InicioComponent implements OnInit {
   user: User = new User()
   idUser = environment.id
 
+  // ESSAS VARIÁVEIS AJUDAM A SEPARAR AS POSTAGENS POR DATA EM ORDEM DESCRESCENTE
   key = 'data'
   reverse = true
 
@@ -107,7 +108,7 @@ export class InicioComponent implements OnInit {
   }
 
   findByNomeTema() {
-
+    
     if (this.nomeTema == '') {
       this.getAllTemas()
     } else {
